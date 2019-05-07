@@ -6,6 +6,9 @@ const errorMsg = document.querySelector('#error')
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    address.innerHTML = 'Loading...'
+    foreCast.innerHTML = ''
     
     fetch(`/weather?address=${search.value}`).then((response) => {
         // json() = parsed json
